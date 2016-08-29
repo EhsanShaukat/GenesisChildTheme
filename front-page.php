@@ -2,14 +2,14 @@
 /**
  * Front page template
  *
- * @package      Sample
+ * @package      Neo
  * @author       Ehsan Shaukat
  * @link         http://www.ehsanshaukat.com/
  * @copyright    Copyright (c) 2015, Ehsan Shaukat
  * @license      GPL-3.0+
  */
 
-add_action( 'genesis_meta', 'sample_home_page_setup' );
+add_action( 'genesis_meta', 'neo_home_page_setup' );
 
 /**
  * Set up the homepage layout by conditionally loading sections when widgets
@@ -18,7 +18,7 @@ add_action( 'genesis_meta', 'sample_home_page_setup' );
  * @since 1.0.0
  */
 
-function sample_home_page_setup() {
+function neo_home_page_setup() {
 	$home_sidebars = array(
 		'home_welcome' 	   => is_active_sidebar( 'home-welcome' ),
 	);
@@ -30,7 +30,7 @@ function sample_home_page_setup() {
 
 	//* Add home welcome area if "Home Welcome" widget area is active.
 	if ( $home_sidebars['home_welcome'] ) {
-		add_action( 'genesis_after_header', 'sample_add_home_welcome' );
+		add_action( 'genesis_after_header', 'neo_add_home_welcome' );
 	}
 }
 
@@ -40,7 +40,7 @@ function sample_home_page_setup() {
  * @since 1.0.0
  */
 
-function sample_add_home_welcome() {
+function neo_add_home_welcome() {
 	genesis_widget_area( 'home-welcome',
 		array(
 			'before' => '<div class="home-welcome"><div class="wrap">',
